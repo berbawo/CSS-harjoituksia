@@ -1,3 +1,58 @@
 /* CSS-kokonaisharjoitus, osa 1 */
 
 /* Aloita CSS:n kirjoittaminen tämän kommentin alta. */
+
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  line-height: 1.5em;
+  color: aliceblue;
+  background-color: rgb(19, 19, 44);
+}
+
+h1,
+h2,
+h3 {
+  color: rgb(128, 174, 214);
+}
+
+a {
+  color: rgb(167, 114, 216);
+}
+
+.site-header,
+.main,
+.site-footer {
+  max-width: 95%;
+  display: block;
+  align-items: center;
+  margin: 2rem;
+}
+
+.card {
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(29, 29, 66);
+  border: solid 0.2rem rgb(167, 114, 216);
+  border-radius: 1rem;
+}
+
+#top {
+  border-bottom: solid 0.3rem rgb(167, 114, 216);
+}
+
+.button {
+  padding: 0.5rem;
+  background-color: rgb(29, 29, 66);
+  border: solid 0.2rem rgb(128, 174, 214);
+  border-radius: 1rem;
+  text-decoration: none;
+}
+
+.hero {
+  margin: 1rem;
+  padding: 1rem;
+  border-bottom: solid 0.2rem rgb(29, 29, 66);
+}
