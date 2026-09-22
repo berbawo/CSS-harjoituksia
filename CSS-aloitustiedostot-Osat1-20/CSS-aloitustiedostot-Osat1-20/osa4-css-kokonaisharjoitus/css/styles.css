@@ -1,3 +1,90 @@
 /* CSS-kokonaisharjoitus, osa 4 */
 
 /* Aloita CSS:n kirjoittaminen tämän kommentin alta. */
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: aliceblue;
+    background-color: rgb(19, 19, 44);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(28, 28, 66);
+}
+
+ul li {
+    float: left;
+}
+
+ul li a {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: large;
+    color: rgb(192, 213, 231);
+}
+
+ul li a:hover {
+    font-size: larger;
+    color: aliceblue;
+}
+
+.eyebrow {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: solid 5px rgb(28, 28, 66);
+}
+
+main {
+    display: block;
+    margin: 20px;
+    padding: 10px;
+}
+
+.button {
+    text-decoration: none;
+    color: rgb(192, 213, 231);
+    margin: 5px;
+    padding: 10px;
+    background-color: rgb(28, 28, 66);
+    border: solid 2px rgb(192, 213, 231);
+    border-radius: 10px;
+}
+
+.content-section {
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.card1 {
+    margin: 5px;
+    padding: 20px;
+    display: block;
+}
+
+.card2 {
+    margin: 5px;
+    padding: 20px;
+    display: inline;
+}
+
+.card3 {
+    max-width: 5px;
+    padding: 20px;
+    display: inline-block;
+}
