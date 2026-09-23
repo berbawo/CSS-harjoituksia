@@ -1,3 +1,56 @@
 /* CSS-kokonaisharjoitus, osa 5 */
 
 /* Aloita CSS:n kirjoittaminen tämän kommentin alta. */
+
+/* Osa-1 */
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    line-height: 1.6;
+    color: aliceblue;
+    background-color: rgb(69, 52, 85);
+}
+
+h1, h2, h3 {
+    color: rgb(207, 233, 255);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+a {
+    color: rgb(180, 145, 219);
+}
+
+a:hover {
+    color: rgb(201, 176, 230);
+}
+
+.site-header, main, .site-footer {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.card {
+    margin-block: 1rem;
+    padding: 1rem;
+    background-color: rgb(56, 41, 70);
+    border: 3px solid rgb(180, 145, 219);
+    border-radius: 10px;
+}
+
+#top {
+    border-bottom: 3px solid rgb(180, 145, 219);
+}
+
+.button {
+    padding: .5rem;
+    background-color: rgb(69, 52, 85);
+    border: 2px solid rgb(180, 145, 219);
+}
+
+
+/* Osa 2 */
+
