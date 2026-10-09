@@ -1,0 +1,157 @@
+/*
+  HARJOITUKSEN ALOITUSTIEDOSTO
+  ---------------------------
+  Tässä CSS:ssä toistetaan tarkoituksella samoja arvoja.
+
+  Tehtävä:
+  1. Etsi toistuvat värit, välit ja pyöristykset.
+  2. Luo :rootiin semanttiset tokenit ja korvaa toistuvat arvot var()-kutsuilla.
+  3. Lisää tumma teema vaihtamalla vain tokenien arvoja.
+  4. Haaste: tee typografia ja section-spacing fluidiksi clamp()-funktiolla.
+
+  Älä muuta HTML:ää ensimmäisiä kolmea vaihetta varten.
+*/
+
+:root {
+  --background: #7c3aed;
+  --alt-background: #ffffff;
+  --text: #1e293b;
+  --alt-text: #475569;
+  --border: #e2e8f0;
+  --box-shadow:rgb(15 23 42 / 0.08);
+  --badge-text: #6d28d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.hero {
+  background: var(--background);
+  color: var(--alt-background);
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lead {
+  max-width: 48rem;
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.intro {
+  padding: 4rem 0 2rem;
+}
+
+.intro h2,
+.notice h2 {
+  margin-top: 0;
+  color: var(--alt-background);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  padding: 2rem 0 4rem;
+}
+
+.card {
+  background: var(--alt-background);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px var(--box-shadow);
+}
+
+.card h2 {
+  margin: 1rem 0 0.5rem;
+  color: var(--text);
+}
+
+.card p {
+  margin: 0 0 1.5rem;
+  color: var(--alt-text);
+}
+
+.card--important {
+  border: 2px solid var(--background);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--border);
+  color: var(--badge-text);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.button {
+  display: inline-block;
+  background: var(--background);
+  color: var(--alt-background);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button:hover {
+  background: var(--badge-text);
+}
+
+.button--accent {
+  background: #dc2626;
+}
+
+.button--accent:hover {
+  background: #b91c1c;
+}
+
+.notice {
+  margin-bottom: 4rem;
+  background: var(--alt-background);
+  border-left: 5px solid var(--background);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px var(--box-shadow);
+}
+
+.notice p {
+  margin-bottom: 0;
+  color: var(--alt-text);
+}
+
+footer {
+  background: var(--text);
+  color: var(--alt-background);
+  padding: 2rem 1rem;
+  text-align: center;
+}
