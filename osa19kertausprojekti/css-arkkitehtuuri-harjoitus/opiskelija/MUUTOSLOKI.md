@@ -7,6 +7,8 @@
 | 3. heikko kontrasti| | sisällön luettavuus paranee ja sisällön rakenne on luontevampi | |
 | 4. toistoa .course-card ja .card-title tyyleissä | säännöt esiintyvät vain kerran .course-card ja .card-title classeissa | vähemmän toistoa ja kuollutta CSS:sää | |
 | 5. .button:focus { outline:none; }| focus:visible | näppäimistökohdistusta ei voi lykätä | |
+| 6. .button text-decoration:none | .button text-decoration:underline ja text-underline-offset lisätty | nappejen linkit ovat huomattavampia ja saavutettavampia |
+| 7. .layout ja .course-grid kiinteät sarakkeet | minmax | näytön kapeutuessa kortin sisältö pysyy luettavana |
 
 ## Container queryn toiminta sivupalkissa ja pääsisällössä
 
