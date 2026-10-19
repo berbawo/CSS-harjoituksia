@@ -1,0 +1,139 @@
+/* TAHALLAAN HEIKKO CSS – älä jaa malliratkaisua heti */
+
+:root {
+    --primary-bg: #100d3f;
+    --secondary-bg: #1c1674;
+    --button-bg: #231f58;
+    --link-color: #fefeff;
+    --text-color-1: #e6e5fa;
+    --text-color-2: #afaaf8;
+    --border-color: #655bf1;
+
+    --font-family: arial, sans-serif;
+    --line-height: 1.6;
+    --h1-size: 3.5em;
+    --h2-size: 2.6em;
+    --h3-size: 1.5em
+    --tag-size: 0.75em;
+    --p-size: 1em;
+
+    --border-radius-1: .5rem;
+    --border-radius-2: 1rem;
+
+}
+
+@layer reset, base, components, utilities;
+
+@layer components {
+
+}
+
+@layer utilities {
+
+}
+
+
+body { 
+    margin:0; 
+    font-family: var(--font-family); 
+    color:var(--text-color-1);
+    background:var(--primary-bg); 
+}
+
+h1 { 
+    color:var(--text-color-2); 
+    font-size:var(--h1-size); 
+}
+
+.site-header { 
+    display:flex; 
+    justify-content:space-between; 
+    padding:20px; 
+    background:var(--secondary-bg); 
+}
+
+nav { 
+    display:flex; 
+    gap:20px; 
+}
+
+.logo { 
+    color:var(--link-color); 
+    font-weight:bold; 
+}
+
+.layout { 
+    display:grid; 
+    grid-template-columns:260px 1fr; 
+    gap:30px; 
+    padding:24px; 
+}
+
+.sidebar { 
+    background:var(--secondary-bg); 
+    padding:20px; 
+}
+
+.hero { 
+    background:var(--secondary-bg); 
+    padding:24px; 
+    margin-bottom:30px; 
+}
+
+.course-grid { 
+    display:grid; 
+    grid-template-columns:repeat(3,1fr); 
+    gap:20px; 
+}
+
+.course-card { 
+    background:var(--primary-bg); 
+    border:1px solid var(--border-color); 
+    border-radius:var(--border-radius-1); 
+    padding:20px; 
+    height:235px; 
+}
+
+.course-card.featured { 
+    border:2px solid var(--link-color); 
+}
+
+.card-title { 
+    color:var(--text-color-2); 
+    font-size:24px; 
+}
+
+.tag { 
+    color:var(--link-color); 
+    font-size:12px;
+}
+
+.button { 
+    display:inline-block; 
+    padding:12px 18px; 
+    background:var(--button-bg); 
+    color:var(--link-color); 
+    text-decoration:none; 
+    border-radius:8px; 
+    transition:all .25s; 
+}
+
+.button:focus { 
+    outline:none; 
+}
+
+@container (min-width:900px) { 
+    .course-card { 
+        display:grid; 
+        grid-template-columns:1fr 1fr; gap:8px; 
+    } 
+}
+@container (max-width:700px) { 
+    .layout { 
+        grid-template-columns:1fr; 
+    } 
+    .course-grid { 
+        grid-template-columns:1fr; 
+    } 
+}
+
