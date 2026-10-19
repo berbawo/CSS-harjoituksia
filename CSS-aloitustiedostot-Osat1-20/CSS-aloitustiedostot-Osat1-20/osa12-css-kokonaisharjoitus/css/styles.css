@@ -268,7 +268,7 @@ h1 {
 
 
 .button, .card {
-    transition: transform 160ms ease, border-color 160ms ease, box-shadow 16oms ease;
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
 .card:hover {
