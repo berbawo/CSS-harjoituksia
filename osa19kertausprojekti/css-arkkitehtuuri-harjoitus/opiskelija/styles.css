@@ -1,6 +1,10 @@
 /* TAHALLAAN HEIKKO CSS – älä jaa malliratkaisua heti */
 
-:root {
+
+@layer reset, base, layout, components, utilities;
+
+@layer base {
+    :root {
     --primary-bg: #05071b;
     --secondary-bg: #010016;
     --button-bg: #09053a;
@@ -11,9 +15,9 @@
 
     --font-family: arial, sans-serif;
     --line-height: 1.6;
-    --h1-size: 3.5em;
-    --h2-size: 2.6em;
-    --h3-size: 1.5em;
+    --h1-size: clamp(2rem, 5vw, 5rem);
+    --h2-size: clamp(1.5rem, 2.5vw, 4rem);
+    --h3-size: clamp(1.25rem, 2vw, 3rem);
     --tag-size: 0.75em;
     --p-size: 1em;
 
@@ -23,11 +27,8 @@
     --border-radius-1: .5rem;
     --border-radius-2: 1rem;
 
-}
+    }
 
-@layer reset, base, components, utilities;
-
-@layer base {
     body { 
         margin:0; 
         font-family: var(--font-family); 
@@ -35,9 +36,19 @@
         background:var(--primary-bg); 
     }
 
-    h1 { 
-        color:var(--text-color-2); 
-        font-size:var(--h1-size); 
+    .button:focus-visible {
+        outline: 1px;
+        outline-offset: 2px;
+        color: var(--link-color);
+    }
+}
+
+@layer layout {
+    .site-header { 
+        display:flex; 
+        justify-content:space-between; 
+        padding:1.25rem; 
+        background:var(--secondary-bg); 
     }
 
     nav { 
@@ -45,37 +56,17 @@
         gap:var(--gap-md); 
     }
 
-}
-
-@layer components {
-    .site-header { 
-        display:flex; 
-        justify-content:space-between; 
-        padding:20px; 
-        background:var(--secondary-bg); 
-    }
-
-    .logo { 
-        color:var(--link-color); 
-        font-weight:bold; 
-    }
-
     .layout { 
         display:grid; 
-        grid-template-columns:minmax(17rem, 24rem) minmax(58rem, auto); 
+        grid-template-columns:minmax(0, 24rem) minmax(0, 1fr); 
         gap:var(--gap-md); 
-        padding:24px; 
+        padding:1.5rem; 
     }
 
-    .sidebar { 
+    main, .sidebar { 
+        min-width: 0;
         background:var(--primary-bg); 
-        padding:20px; 
-    }
-
-    .hero { 
-        background:var(--primary-bg); 
-        padding:24px; 
-        margin-bottom:30px; 
+        padding:1.25rem; 
     }
 
     .course-grid { 
@@ -84,28 +75,50 @@
         gap:var(--gap-md); 
     }
 
+
+}
+
+@layer components {
+
+
+    .hero { 
+        background:var(--primary-bg); 
+        padding:1.5rem; 
+        margin-bottom:1.75rem; 
+    }
+    .hero h1 { 
+        color:var(--text-color-2); 
+        font-size:var(--h1-size); 
+    }
+    .sidebar h2 {
+        font-size: var(--h2-size);
+    }
+    .logo { 
+        color:var(--link-color); 
+        font-weight:bold; 
+    }
+    .card-container {
+        container: courses / inline-size;
+        min-width: 0%;
+    }
     .course-card { 
         background:var(--secondary-bg); 
         border:1px solid var(--border-color); 
         border-radius:var(--border-radius-1); 
-        padding:20px; 
-        height:235px; 
+        padding:1.25rem;
+        height: clamp(12.5rem, 14rem, 16rem);
     }
-
     .course-card.featured { 
         border:2px solid var(--link-color); 
     }
-
     .card-title { 
         color:var(--text-color-2); 
         font-size:var(--h3-size); 
     }
-
     .tag { 
         color:var(--link-color); 
         font-size:var(--tag-size);
     }
-
     .button { 
         display:inline-block; 
         padding:12px 18px; 
@@ -116,14 +129,6 @@
         border-radius:var(--border-radius-1); 
         transition:all .25s; 
     }
-
-    .button:focus-visible {
-        outline: 1px;
-        outline-offset: 2px;
-        color: var(--link-color);
-    }
-
-
 }
 
 @layer utilities {
@@ -135,22 +140,10 @@
 
 
 
-@container (width > 700px) { 
-    .layout {
-        grid-template-columns: auto;
-    }
-    .course-grid { 
-        grid-auto-rows: auto; 
+@container courses (max-width: 80rem) { 
+    .course-card { 
+        
     } 
 
 
 }
-@container (max-width:700px) { 
-    .layout { 
-        grid-template-columns:1fr; 
-    } 
-    .course-grid { 
-        grid-template-columns:1fr; 
-    } 
-}
-
