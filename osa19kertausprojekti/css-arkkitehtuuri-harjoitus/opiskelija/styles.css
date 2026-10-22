@@ -45,14 +45,16 @@
 
 @layer layout {
     .site-header { 
-        display:flex; 
+        display:flex;
+        flex-wrap: wrap;
         justify-content:space-between; 
         padding:1.25rem; 
         background:var(--secondary-bg); 
     }
 
     nav { 
-        display:flex; 
+        display:flex;
+        flex-wrap: wrap;
         gap:var(--gap-md); 
     }
 
@@ -65,7 +67,6 @@
 
     main, .sidebar { 
         min-width: 0;
-        background:var(--primary-bg); 
         padding:1.25rem; 
     }
 
@@ -75,6 +76,13 @@
         gap:var(--gap-md); 
     }
 
+    @media (max-width: 81rem) {
+        .course-grid {
+            grid-template-columns: minmax(0, 1fr);
+            gap: var(--gap-md);
+            max-width: 20rem;
+        }
+    }
 
 }
 
@@ -106,7 +114,7 @@
         border:1px solid var(--border-color); 
         border-radius:var(--border-radius-1); 
         padding:1.25rem;
-        height: clamp(12.5rem, 14rem, 16rem);
+        height: clamp(16rem, 20rem, 28rem);
     }
     .course-card.featured { 
         border:2px solid var(--link-color); 
@@ -128,6 +136,26 @@
         text-underline-offset: 2px;
         border-radius:var(--border-radius-1); 
         transition:all .25s; 
+    }
+
+    @container courses (min-width:28rem) {
+        .course-card { 
+            grid-template-columns:9rem minmax(0,1fr); 
+        } 
+        .course-card .tag, .course-card .card-title { 
+            grid-column:1; 
+        } 
+        .course-card p, .course-card .button {
+            grid-column:2; 
+        }
+    }
+
+   
+
+    @media (prefers-reduced-data: reduce) {
+        .button {
+            transition: none;
+        }
     }
 }
 
