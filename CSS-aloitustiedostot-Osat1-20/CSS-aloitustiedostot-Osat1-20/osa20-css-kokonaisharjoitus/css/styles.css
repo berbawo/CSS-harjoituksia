@@ -1,6 +1,120 @@
 /* CSS-kokonaisharjoitus, osa 20 – päätyylitiedosto */
-@import url("tokens.css");
-@import url("base.css");
-@import url("components.css");
 
-/* Kirjoita sivukohtaiset ja layout-tyylit tämän kommentin alle. */
+@layer reset, base, layout, components;
+
+/* || base : yleiset tyylit ja tyyli-tokenit */
+@layer base {
+    :root {
+        --bg-color-primary: #d6f0f8;
+        --bg-color-secondary: #c4e6f1;
+        --border-color: #8ddcf7;
+        --focus-color: #0792c0;
+        --link-color: #095872;
+        --text-color-1: #010a13;
+        --text-color-2: #022547;
+        --button-color: #6196cc;
+        --border-radius-50: 50%;
+        --border-radius-10: 10%;
+        --font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        --h1-size: clamp(0.5rem, 3.5rem, 4rem);
+        --h2-size: clamp(0.5rem, 2.5rem, 3.5rem);
+        --h3-size: clamp(0.5rem, 1.75rem, 2rem);
+        --space-1: 1rem;
+        --space-2: 3rem;
+    }
+
+    body {
+        margin: 0;
+        background: var(--bg-color-primary);
+        font-family: var(--font-family);
+        color: var(--text-color-1);
+        line-height: 1.5;
+    }
+
+    a {
+        color: var(--link-color);
+    }
+
+    .button:focus-visible {
+        outline: 1px;
+        outline-offset: 2px;
+        color: var(--focus-color);
+    }
+}
+
+/*|| layout: sivukohtaiset ja layout-tyylit */
+@layer layout {
+    .site-header {
+        display: flex;
+        flex-wrap: wrap;
+        padding: var(--space-1);
+        background: var(--bg-color-secondary);
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-2);
+        list-style-type: none;
+        
+    }
+    .main-content {
+
+    }
+    .hero {
+        display: inline-block;
+        margin: var(--space-1);
+
+    }
+    .hero h1 {
+        font-size: var(--h1-size);
+        color: var(--text-color-2);
+    }
+    .content-section {
+
+    }
+    .card-list {
+
+    }
+    .registration{
+
+    }
+    .form {
+
+    }
+    .site-footer {
+
+    }
+}
+
+/*|| components: */
+
+@layer components {
+    .brand {
+
+    }
+    .eyebrow {
+
+    }
+    .hero__lead {
+
+    }
+    .button {
+
+    }
+    .cards {
+
+    }
+    .card {
+
+    }
+    .card__badge {
+
+    }
+    .card--featured {
+
+    }
+    .help-button {
+
+    }
+
+}
